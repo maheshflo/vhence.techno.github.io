@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# .NET Concepts</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: pink;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        section {
+            margin: 2rem;
+            padding: 2rem;
+            background-color: cyan;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Animation to Fade In */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .concepts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .concept {
+            flex: 1;
+            margin: 1rem;
+            padding: 1.5rem;
+            background-color: darksalmon;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .concept:hover {
+            transform: scale(1.05);
+        }
+
+        .concept h3 {
+            color: #e67e22;
+        }
+
+        /* Styling for Code Block */
+        .code-block {
+            background-color: teal;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            margin-top: 1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* Section Styling */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #e67e22;
+        }
+
+        /* Styling for Textboxes */
+        .code-textbox {
+            width: 100%;
+            padding: 1rem;
+            font-family: "Courier New", Courier, monospace;
+            background-color: #ecf0f1;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 1rem;
+            box-sizing: border-box;
+            resize: none;
+            font-size: 1rem;
+            height: 150px;
+            overflow-y: auto;
+        }
+
+        .copy-btn {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            margin-top: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .concepts {
+                flex-direction: column;
+            }
+
+            .concept {
+                margin-bottom: 1rem;
+            }
+
+            footer {
+                padding: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>C# .NET Concepts</h1>
+        <p>An overview of C# and its object-oriented concepts.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="concepts">
+        <!-- C# Definition Section -->
+        <section>
+            <h2>What is C# .NET?</h2>
+            <p>C# is a modern, object-oriented programming language developed by Microsoft as part of its .NET framework. It is used for developing a wide range of applications, from desktop software to web applications and even mobile apps.</p>
+        </section>
+
+        <!-- Types of C# Section -->
+        <section>
+            <h2>Types in C#</h2>
+            <ul>
+                <li><strong>Value Types:</strong> Includes types like int, double, float, char, and bool.</li>
+                <li><strong>Reference Types:</strong> Includes types like class, interface, delegate, and array.</li>
+                <li><strong>Nullable Types:</strong> Allows value types to be assigned a null value (e.g., int?).</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- OOP Concepts -->
+    <div class="concepts">
+        <section class="concept">
+            <h3>What are Variables?</h3>
+            <p>In C#, a variable is a storage location identified by a name (identifier) used to store data. A variable must be declared with a specific type before it can be used.</p>
+            <div class="code-block">
+                <p>int age = 25;</p>
+                <p>string name = "John";</p>
+            </div>
+        </section>
+
+        <section class="concept">
+            <h3>What is a Class?</h3>
+            <p>A class in C# is a blueprint for creating objects. It defines the properties (fields), methods (functions), and events that the objects created from the class can have.</p>
+            <div class="code-block">
+                <p>public class Person {</p>
+                <p>&nbsp;&nbsp;public string Name;</p>
+                <p>&nbsp;&nbsp;public int Age;</p>
+                <p>&nbsp;&nbsp;public void Greet() { Console.WriteLine("Hello, " + Name); }</p>
+                <p>}</p>
+            </div>
+        </section>
+
+        <section class="concept">
+            <h3>What is an Object?</h3>
+            <p>An object is an instance of a class. When a class is defined, no memory is allocated until an object of that class is created.</p>
+            <div class="code-block">
+                <p>Person person1 = new Person();</p>
+                <p>person1.Name = "Alice";</p>
+                <p>person1.Age = 30;</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Armstrong Number Section -->
+    <section>
+        <h2>What is Armstrong Number?</h2>
+        <p>An Armstrong number (also known as a Narcissistic number or Pluperfect number) is a number that is equal to the sum of its own digits each raised to the power of the number of digits.</p>
+        <button class="copy-btn" onclick="copyCode('.armstrong-code')">Copy Code</button>
+        <textarea class="code-textbox armstrong-code" readonly>
+namespace Armstrong
+{
+    class Program
+    {
+        static void Main (string[] args)
+        {
+            int a, b, c, d = 0;
+            Console.WriteLine("Enter a number: ");
+            a = int16.Parse(Console.ReadLine());
+            b = a;
+            while(b!=0)
+            {
+                c = b % 10;
+                d = d + c * c * c;
+                b = b / 10;
+            }
+            if(d == a)
+            {
+                Console.WriteLine("It is an armstrong number.");
+            }
+            else
+            {
+                Console.WriteLine("It is not an armstrong number.");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+        </textarea>
+    </section>
+
+    <!-- Factorial Section -->
+    <section>
+        <h2>Factorial Example</h2>
+        <button class="copy-btn" onclick="copyCode('.factorial-code')">Copy Code</button>
+        <textarea class="code-textbox factorial-code" readonly>
+using System;
+
+class Program {
+    static void Main(string[] args) {
+        int number = 5;
+        int factorial = 1;
+
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+
+        Console.WriteLine("Factorial of " + number + " is: " + factorial);
+    }
+}
+        </textarea>
+    </section>
+
+    <!-- Prime and Composite Number Section -->
+    <section>
+        <h2>Prime and Composite Number Example</h2>
+        <button class="copy-btn" onclick="copyCode('.prime-composite-code')">Copy Code</button>
+        <textarea class="code-textbox prime-composite-code" readonly>
+using System;
+
+class Program {
+    static void Main() {
+        int number = 29;
+        bool isPrime = true;
+
+        for (int i = 2; i <= number / 2; i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime)
+            Console.WriteLine(number + " is a Prime number.");
+        else
+            Console.WriteLine(number + " is a Composite number.");
+    }
+}
+        </textarea>
+    </section>
+
+    <!-- Switch Case Example -->
+    <section>
+        <h2>Switch Case Example</h2>
+        <button class="copy-btn" onclick="copyCode('.switch-case-code')">Copy Code</button>
+        <textarea class="code-textbox switch-case-code" readonly>
+using System;
+
+class Program {
+    static void Main() {
+        int day = 3;
+        string dayName;
+
+        switch(day) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            default:
+                dayName = "Unknown";
+                break;
+        }
+
+        Console.WriteLine("Today is: " + dayName);
+    }
+}
+        </textarea>
+    </section>
+
+    <!-- Loop Example -->
+    <section>
+        <h2>Loop Example</h2>
+        <button class="copy-btn" onclick="copyCode('.loop-code')">Copy Code</button>
+        <textarea class="code-textbox loop-code" readonly>
+using System;
+
+class Program {
+    static void Main() {
+        for (int i = 1; i <= 5; i++) {
+            Console.WriteLine(i);
+        }
+    }
+}
+        </textarea>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 C# .NET Concepts | Learn and Practice</p>
+        <p>For more details, visit <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">C# Documentation</a></p>
+    </footer>
+
+    <script>
+        function copyCode(codeClass) {
+            // Get the code block based on the class passed
+            var codeText = document.querySelector(codeClass);
+
+            // Select the text in the textbox
+            codeText.select();
+            codeText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the selected text to the clipboard
+            document.execCommand('copy');
+
+            // Alert the user that the code has been copied
+            alert('Code copied to clipboard!');
+        }
+    </script>
+
+</body>
+</html>

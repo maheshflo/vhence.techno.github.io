@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Hence Techno</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+			background-color: teal;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            color: brown;
+            font-style: italic;
+            font-family: cursive;
+        }
+
+        h3 {
+            font-size: 40px;
+            font-style: italic;
+            color: Red;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            height: 80px;
+            width: 100%;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .menu-btn {
+            background-color: Blue;
+            color: white;
+            font-size: 30px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .sidenav {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            height: 800px;
+            width: 250px;
+            background-color: green;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .sidenav a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            background-color: darkslvon;
+        }
+
+        /* Profile Logo */
+        .profile-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        /* Login Button */
+        .login-btn button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: black;
+            color: red;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-btn button:hover {
+            background-color: #45a049;
+        }
+
+        /* Hero Section */
+        #hero {
+            text-align: center;
+            margin-top: 85px;
+        }
+
+        .hero-content1 h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content1 h1 span {
+            font-size: 2em;
+            display: inline-block;
+            animation: letterColorChange 2s infinite;
+            animation-timing-function: linear;
+        }
+
+        /* Continuous color change animation for each letter */
+        @keyframes letterColorChange {
+            0% { color: red; }
+            25% { color: blue; }
+            50% { color: green; }
+            75% { color: orange; }
+            100% { color: purple; }
+        }
+
+        .hero-content1 h1 span:nth-child(1) { animation-delay: 0s; }
+        .hero-content1 h1 span:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content1 h1 span:nth-child(3) { animation-delay: 0.4s; }
+        .hero-content1 h1 span:nth-child(4) { animation-delay: 0.6s; }
+        .hero-content1 h1 span:nth-child(5) { animation-delay: 0.8s; }
+        .hero-content1 h1 span:nth-child(6) { animation-delay: 1s; }
+        .hero-content1 h1 span:nth-child(7) { animation-delay: 1.2s; }
+        .hero-content1 h1 span:nth-child(8) { animation-delay: 0s; }
+		.hero-content1 h1 span:nth-child(9) { animation-delay: 0s; }
+        .hero-content1 h1 span:nth-child(10) { animation-delay: 0.2s; }
+		.hero-content1 h1 span:nth-child(11) { animation-delay: 0s; }
+        .hero-content1 h1 span:nth-child(12) { animation-delay: 0s; }
+		.hero-content1 h1 span:nth-child(13) { animation-delay: 0.2s; }
+        .hero-content1 h1 span:nth-child(14) { animation-delay: 0.4s; }
+        .hero-content1 h1 span:nth-child(15) { animation-delay: 0.6s; }
+        .hero-content1 h1 span:nth-child(16) { animation-delay: 0.8s; }
+        .hero-content1 h1 span:nth-child(17) { animation-delay: 1s; }
+        .hero-content1 h1 span:nth-child(18) { animation-delay: 1.2s; }
+        .hero-content1 h1 span:nth-child(19) { animation-delay: 0s; }
+        .hero-content1 h1 span:nth-child(20) { animation-delay: 0.2s; }
+        .hero-content1 h1 span:nth-child(21) { animation-delay: 0.4s; }
+        .hero-content1 h1 span:nth-child(22) { animation-delay: 0.6s; }
+        .hero-content1 h1 span:nth-child(23) { animation-delay: 0.8s; }
+        .hero-content1 h1 span:nth-child(24) { animation-delay: 1s; }
+        .hero-content1 h1 span:nth-child(25) { animation-delay: 1.2s; }
+
+        /* Image Slider */
+        .image-box {
+            width: 100%;
+            max-width: 500px;
+            margin: 30px auto;
+            border: 2px solid #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-slider {
+            display: flex;
+            width: 500%;
+            animation: slide 15s infinite;
+        }
+
+        .image-slider img {
+            width: 20%;
+            height: 100%;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-20%); }
+            40% { transform: translateX(-40%); }
+            60% { transform: translateX(-60%); }
+            80% { transform: translateX(-80%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Vision & Mission Styling */
+        .vision-mission {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .vision-mission {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .vision, .mission {
+            width: 45%;
+            padding: 20px;
+            border: 2px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .vision h2, .mission h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .vision p, .mission p {
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .vision h2 {
+            color: #2a9d8f; /* Vision color */
+        }
+
+        .mission h2 {
+            color: #e76f51; /* Mission color */
+        }
+
+        /* Footer and copyright */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .vision-mission {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .vision, .mission {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .sidebar {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                height: auto;
+                padding: 10px;
+            }
+
+            .profile-logo {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+				
+            }
+
+            .menu-btn {
+                font-size: 25px;
+            }
+
+            .login-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar and Menu -->
+    <div class="sidebar">
+        <button class="menu-btn" onclick="toggleNav()">&#9776;</button>
+        <div class="profile-logo">
+            <img src="logo.png" alt="V-Hence Techno Logo">
+        </div>
+        <div id="sideNav" class="sidenav">
+            <h2>PROGRAMMING</h2>
+            <a href="csharp.html">C-Sharp.Net</a>
+            <a href="#">Python</a>
+            <a href="#">VB.Net</a>
+            <a href="#">Java</a>
+            <a href="#">Kotlin</a>
+            <h2>WEB DEVELOPMENT</h2>
+            <a href="#">ASP.Net</a>
+            <a href="#">HTML & CSS</a>
+            <a href="#">JSP</a>
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="login-btn">        
+            <button onclick="location.href='#hero'">Home</button>
+            <button onclick="location.href='#services'">Services</button>
+            <button onclick="location.href='#contact'">Contact</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section id="hero">
+        <div class="hero-content1">
+            <h1>
+                <span>W</span>
+                <span>e</span>
+                <span>l</span>
+                <span>c</span>
+                <span>o</span>
+                <span>m</span>
+                <span>e</span>
+                <span></span>
+                <span>T</span>
+                <span>o</span>
+                <span></span>
+                <span>V</span>
+                <span>-</span>
+                <span>H</span>
+                <span>e</span>
+                <span>n</span>
+                <span>c</span>
+                <span>e</span>
+                <span></span>
+                <span>T</span>
+                <span>e</span>
+                <span>c</span>
+                <span>h</span>
+                <span>n</span>
+                <span>o</span>
+            </h1>
+            <h2>Innovating the Future of Technology</h2>
+            <h3>Developed By Mahesh Chakraborty</h3>
+        </div>
+    </section>
+
+    <!-- About V-Hence Techno -->
+    <section class="main-content">
+        <h2>About V-Hence Techno</h2>
+        <p>V-Hence Techno is a leading provider of cutting-edge programming and web development services. Our expertise spans across various technologies such as C-Sharp, Python, VB.Net, Java, and Web Development frameworks including ASP.Net, HTML & CSS, and JSP. We are committed to delivering innovative solutions that drive business growth and technological advancement.</p>
+        
+        <!-- Image Slider -->
+        <div class="image-box">
+            <div class="image-slider">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+                <img src="image4.jpg" alt="Image 4">
+                <img src="image5.jpg" alt="Image 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision and Mission -->
+    <div class="vision-mission">
+        <div class="vision">
+            <h2>Our Vision</h2>
+            <p>To be a global leader in technology solutions, empowering businesses and individuals to achieve greater success through innovative programming, web development, and cutting-edge solutions.</p>
+        </div>
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide high-quality, innovative, and cost-effective technology solutions to businesses and individuals worldwide. We aim to create value for our clients by delivering tailored services, enhancing operational efficiencies, and driving technological growth.</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="services">
+        <h2>Our Services</h2>
+        <p>We offer a range of services in programming, web development, and customized technology solutions to meet the diverse needs of businesses and individuals.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for more information about our services. We are here to help you navigate the world of technology solutions!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 V-Hence Techno. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        function toggleNav() {
+            var sidenav = document.getElementById("sideNav");
+            if (sidenav.style.display === "block") {
+                sidenav.style.display = "none";
+            } else {
+                sidenav.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
